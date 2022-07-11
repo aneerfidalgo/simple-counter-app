@@ -1,25 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
-function App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      count:0;
-    }
+    useState = {
+      count: 0,
+    };
   }
-  render () {
+
+  increment = () => {
+    useState({ count: this.state.count + 1 });
+  };
+
+  decrement = () => {
+    useState({ count: this.state.count - 1 });
+  };
+  render() {
     return (
-      <div className='App'>
+      <div className="App">
+        <button onClick={this.increment} className="counter">
+          +
+        </button>
+        <button onClick={this.decrement} className="counter">
+          -
+        </button>
 
+        <h2>{useState.count}</h2>
       </div>
-    )
+    );
   }
-
-  
- 
-  );
 }
 
 export default App;
